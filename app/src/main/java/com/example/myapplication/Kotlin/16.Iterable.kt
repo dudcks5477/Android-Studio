@@ -75,5 +75,24 @@ fun main(array: Array<String>) {
         // .. -> 마지막을 포함한다.
         println(i)
     }
+    println()
+
+    // 반복하는 방법 (11)
+    var b: Int = 1 // -> 2 -> 3 -> 4 .. -> 9
+    var c: Int = 9
+
+    while (b < c) {
+        b++ // while 문을 정지 시키기 위한 코드
+        println("c")
+    }
+    println()
+
+    var d: Int = 9
+    var e: Int = 8
+    // 반복하는 방법 (12)
+    do {
+        println("hello")
+        e++
+    } while (d >= e)
 
 }
