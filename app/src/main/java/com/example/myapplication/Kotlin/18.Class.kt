@@ -27,8 +27,19 @@ fun main(array: Array<String>) {
 
     // 우리가 만든 클래스(설명서)는 자료형이 된다
     val bigCar1: Car = Car("v8 engine", "big")
-
     val superCar: SuperCar = SuperCar("good engine", "big", "white")
+
+    // 인스턴스가 가지고있는 기능을 사용하는 방법
+    val runableCar: RunableCar = RunableCar("simple engine", "short body")
+    // RunableCar.ride() -> 불가능
+    runableCar.ride()
+    runableCar.navi("부산")
+    runableCar.drive()
+
+    // 인스턴스의 멤버 변수에 접근 하는 방법
+    val runableCar2: RunableCar2 = RunableCar2("nice engine", "long body")
+    println(runableCar2.body)
+    println(runableCar2.engine)
 }
 
 // 클래스(설명서) 만드는 방법 (1)
@@ -43,9 +54,9 @@ class SuperCar {
     var door: String
 
     constructor(engine: String, body: String, door: String) {
-        println(engine)
-        println(body)
-        println(door)
+//        println(engine)
+//        println(body)
+//        println(door)
         this.engine = engine
         this.body = body
         this.door = door
@@ -77,5 +88,48 @@ class Car2 {
         this.engine = engine
         this.body = body
         this.door = door
+    }
+}
+
+class RunableCar(enigne: String, body: String) {
+
+    fun ride() {
+        println("탑승 하였습니다.")
+    }
+
+    fun drive() {
+        println("달립니다.")
+    }
+
+    fun navi(destination: String) {
+        println("$destination 으로 목적지가 설정되었습니다.")
+    }
+
+}
+
+class RunableCar2 {
+    var engine: String
+    var body: String
+
+    constructor(engine: String, body: String) {
+        this.engine = engine
+        this.body = body
+    }
+
+    init {
+        // 초기셋팅을 할 때 유용하다.
+        println("RunableCar2가 만들어 졌습니다.")
+    }
+
+    fun ride() {
+        println("탑승 하였습니다.")
+    }
+
+    fun drive() {
+        println("달립니다.")
+    }
+
+    fun navi(destination: String) {
+        println("$destination 으로 목적지가 설정되었습니다.")
     }
 }
