@@ -117,20 +117,30 @@
 
                 <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="250dp"
-                    android:padding="12dp">
+                    android:padding="12dp"
+                    android:layout_height="250dp">
 
-                    // Should Insert video image
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_launcher_background" /> // Should Insert video image
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="right|bottom"
                         android:layout_margin="8dp"
-                        android:background="#000000"
                         android:padding="2dp"
-                        android:text="19:03"
-                        android:textColor="#ffffff" />
+                        android:textColor="#ffffff"
+                        android:background="#000000"
+                        android:text="19:03"/>
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_launcher_background" />
 
                 </FrameLayout>
 
