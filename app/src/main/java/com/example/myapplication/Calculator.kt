@@ -13,6 +13,9 @@ class Calculator : AppCompatActivity() {
         var new = "0"
         var old = "0"
 
+//        "1" + "2" = "12"
+//        1 + "2"
+
         one.setOnClickListener {
             new = new + 1
             result.setText(new)
@@ -54,8 +57,16 @@ class Calculator : AppCompatActivity() {
             result.setText(new)
         }
 
-        clear.setOnClickListener { }
-        plus.setOnClickListener { }
+        clear.setOnClickListener {
+            old = (old.toInt() + new.toInt()).toString()
+            new = "0"
+            result.setText(old)
+        }
+        plus.setOnClickListener {
+            new = "0"
+            old = "0"
+            result.setText("0")
+        }
 
 
     }
