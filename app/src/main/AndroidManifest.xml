@@ -14,11 +14,7 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
         <activity
-            android:name=".Intent2"
-            android:exported="false" />
-
-        <activity
-            android:name=".Intent1"
+            android:name=".OpenInternet"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,8 +24,16 @@
         </activity>
 
         <activity
+            android:name=".Intent2"
+            android:exported="false" />
+        <activity
+            android:name=".Intent1"
+            android:exported="false">
+
+        </activity>
+        <activity
             android:name=".Calculator"
-            android:exported="true"></activity>
+            android:exported="false" />
         <activity
             android:name=".Linstener"
             android:exported="false" />
