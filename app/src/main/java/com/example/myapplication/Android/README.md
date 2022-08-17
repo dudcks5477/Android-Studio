@@ -47,3 +47,33 @@
 ## Context
 - 문맥
 - Activity가 가지고 있는 주변 정보
+
+## Task
+- Activity와 같다.
+- Stack
+  - 햄버거처럼 아래에서 위로 쌓이는 것
+  - Task가 쌓인다.
+
+```markdown
+                                        A
+A ----> B ----> C ----> B ----> A ----> B
+        A       B       A       B
+                A               A
+- 켜지는 방법을 자체 속성으로 가지고 있는 경우
+  - launchMode
+- 켜지는 방법을 지시하는 경우
+  - IntentFalg
+- LaunchMode                    다중 허용
+  - Standard                       O
+  - singleTop                     조건부 -> 열려고 하는 Activity가 현재 엑티비티라면 onNewIntent를 호출한다.
+---
+  - singleTask                     X
+  - singleInstance                 X
+```
+- 인텐트 플레그
+  - FLAG_ACTIVITY_NEW_TASK
+  - FLAG_ACTIVITY_SINGLE_TOP
+  - FLAG_ACTIVITY_CLEAR_TOP
+  - etc..
+
+[작업 및 백 스택 이해](https://developer.android.com/guide/components/activities/task-and-back-stack?hl=ko)
