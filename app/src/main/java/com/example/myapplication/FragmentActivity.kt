@@ -6,7 +6,11 @@ import android.util.Log
 import androidx.fragment.app.FragmentManager
 import kotlinx.android.synthetic.main.activity_framgment.*
 
-class FragmentActivity : AppCompatActivity() {
+class FragmentActivity : AppCompatActivity(), FragmentOne.OnDataPassListener {
+    override fun onDataPass(data: String?) {
+        Log.d("pass", "" + data)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_framgment)
@@ -18,7 +22,7 @@ class FragmentActivity : AppCompatActivity() {
         bundle.putString("hello", "hello")
         fragmentOne.arguments = bundle
 
-        button.setOnClickListener{
+        button.setOnClickListener {
             // flagment를 동적으로 작동하는 방법
             // flagment 붙이는 방법 replace/add
             val fragmentManager: FragmentManager = supportFragmentManager
@@ -33,7 +37,7 @@ class FragmentActivity : AppCompatActivity() {
             // commitnow -> 지금 당장해
         }
 
-        button2.setOnClickListener{
+        button2.setOnClickListener {
             // fragment remove/detach 하는 방법
             val fragmentManager = supportFragmentManager
             val fragmentTransaction = fragmentManager.beginTransaction()
