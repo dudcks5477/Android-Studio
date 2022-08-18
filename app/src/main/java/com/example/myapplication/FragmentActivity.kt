@@ -12,9 +12,15 @@ class FragmentActivity : AppCompatActivity() {
         setContentView(R.layout.activity_framgment)
         Log.d("life_cycle", "onCreate")
 
+        val fragmentOne: FragmentOne = FragmentOne()
+        // flagment에 data를 넣어주는 방법
+        val bundle: Bundle = Bundle()
+        bundle.putString("hello", "hello")
+        fragmentOne.arguments = bundle
+
         button.setOnClickListener{
             // flagment를 동적으로 작동하는 방법
-            val fragmentOne: FragmentOne = FragmentOne()
+            // flagment 붙이는 방법 replace/add
             val fragmentManager: FragmentManager = supportFragmentManager
 
             // Transaction
@@ -25,6 +31,14 @@ class FragmentActivity : AppCompatActivity() {
             // 끝을 내는 방법
             // commit -> 시간 될 때 해 (좀더 안정적)
             // commitnow -> 지금 당장해
+        }
+
+        button2.setOnClickListener{
+            // fragment remove/detach 하는 방법
+            val fragmentManager = supportFragmentManager
+            val fragmentTransaction = fragmentManager.beginTransaction()
+            fragmentTransaction.remove(fragmentOne)
+            fragmentTransaction.commit()
         }
     }
 
