@@ -14,23 +14,25 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
         <activity
-            android:name=".OpenInternet"
-            android:exported="true">
+            android:name=".FragmentActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".OpenInternet"
+            android:exported="false">
 
+        </activity>
         <activity
             android:name=".Intent2"
             android:exported="false" />
         <activity
             android:name=".Intent1"
-            android:exported="false">
-
-        </activity>
+            android:exported="false"></activity>
         <activity
             android:name=".Calculator"
             android:exported="false" />
